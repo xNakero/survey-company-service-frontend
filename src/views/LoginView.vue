@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <NavBar :logged-in="false"/>
-    <Login/>
-  </div>
+  <body>
+  <NavBar :logged-in="false"/>
+  <Login/>
+  </body>
 </template>
 
 <script>

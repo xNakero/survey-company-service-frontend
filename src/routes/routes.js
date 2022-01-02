@@ -5,6 +5,7 @@ import SurveyHistoryView from "@/views/SurveyHistoryView";
 import SurveysView from "@/views/SurveysView";
 import ProfileView from "@/views/ProfileView";
 import SurveyPublishingView from "@/views/SurveyPublishingView";
+import NotFoundView from "@/views/NotFoundView";
 
 export default [
     {path: '/', component: HomeView},
@@ -13,5 +14,6 @@ export default [
     {path: '/history', component: SurveyHistoryView},
     {path: '/surveys', component: SurveysView},
     {path: '/profile', component: ProfileView},
-    {path: '/add-survey', component: SurveyPublishingView}
+    {path: '/add-survey', component: SurveyPublishingView},
+    {path: '/*', component: NotFoundView}
 ]

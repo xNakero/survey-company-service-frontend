@@ -40,8 +40,8 @@
           <div>{{ survey.description }}</div>
           <div>{{ survey.url }}</div>
           <div>
-            <div>Free spots: {{ survey.freeSpots }}</div>
-            <div>Time to complete: {{ survey.timeToComplete }}</div>
+            <span>Free spots: {{ survey.freeSpots }}</span>
+            <span>Time to complete: {{ survey.timeToComplete }}</span>
           </div>
           <div>
             <button @click="participate(survey.surveyId)">Participate</button>

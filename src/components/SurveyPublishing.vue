@@ -1,6 +1,6 @@
 <template>
   <div v-if="role === 'RESEARCHER' && loggedIn === true">
-    <form @submit.prevent>
+    <form @submit.prevent style="background-color: red">
       <div>
         <h2>Survey</h2>
         <div>
@@ -9,7 +9,7 @@
         </div>
         <div>
           <h3>Description</h3>
-          <input type="text" v-model="description" placeholder="">
+          <textarea  v-model="description" placeholder="" rows="5"/>
         </div>
         <div>
           <h3>url</h3>

@@ -7,13 +7,13 @@
       <div>{{ survey.description }}</div>
       <div>{{ survey.url }}</div>
       <div>
-        <div>Spots total: {{ survey.spotsTotal }}</div>
-        <div>Spots taken: {{ survey.spotsTaken }}</div>
-        <div>Started at: {{ survey.startedAt }}</div>
+        <span>Spots total: {{ survey.spotsTotal }}</span>
+        <span>Spots taken: {{ survey.spotsTaken }}</span>
+        <span>Started at: {{ survey.startedAt }}</span>
       </div>
       <div>
-        <div>Completion code: {{ survey.completionCode }}</div>
-        <div>Time to complete: {{ survey.timeToComplete }}</div>
+        <span>Completion code: {{ survey.completionCode }}</span>
+        <span>Time to complete: {{ survey.timeToComplete }}</span>
       </div>
     </li>
   </ol>

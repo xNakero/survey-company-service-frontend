@@ -1,7 +1,7 @@
 <template>
   <div class="form-window">
     <form @submit.prevent>
-      <h1>Sign in</h1>
+      <h1 class="header">Sign in</h1>
       <div class="form-control">
         <input type="text" v-model="username" placeholder="login">
       </div>
@@ -13,7 +13,7 @@
           Login
         </button>
       </div>
-      <router-link to="/register" style="color: grey">Doesn't have an account? Sign up there</router-link>
+      <router-link to="/register" style="color: #324B4C">Doesn't have an account? Sign up there</router-link>
     </form>
   </div>
 </template>
@@ -54,9 +54,6 @@ export default {
 </script>
 
 <style scoped>
-.add-form {
-  margin-bottom: 40px;
-}
 
 .form-control {
   margin: 20px 0;
@@ -75,13 +72,7 @@ export default {
   font-size: 17px;
   border-radius: 5px;
   text-align: center;
-  background-color: aqua;
-}
-
-.form-control-check {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: #FFFFFF;
 }
 
 .form-window {
@@ -92,29 +83,15 @@ export default {
   width: 30%;
   height: 70%;
   align-items: center;
-  border: 2px solid black;
   border-radius: 10px;
-  /*background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);*/
-}
-
-.form-control-check label {
-  flex: 1;
-}
-
-.form-control-check input {
-  flex: 2;
-  height: 20px;
-}
-
-.form-element {
-  padding: 20px 30px;
+  background-color: #00C6CF;
 }
 
 .btn {
   width: 50%;
   display: inline-block;
-  background: lightgreen;
-  color: black;
+  background: #324B4C;
+  color: #00C6CF;
   padding: 10px 20px;
   margin: 5px;
   border-radius: 5px;
@@ -122,12 +99,10 @@ export default {
   text-decoration: none;
   font-size: 20px;
   font-family: inherit;
-  border: 2px solid black;
 }
 
-h1 {
-  color: black;
+.header {
+  color: #324B4C;
   margin-top: 10%;
 }
-
 </style>
