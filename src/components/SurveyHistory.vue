@@ -1,27 +1,29 @@
 <template>
-  <div v-if="getRoleFromToken() === 'RESEARCHER'">
-    <ResearcherHistory/>
+  <div v-if="loggedIn === true">
+    <div v-if="role === 'RESEARCHER'">
+      <ResearcherHistory/>
+    </div>
+    <div v-else-if="role === 'PARTICIPANT'">
+      <ParticipantHistory/>
+    </div>
+    <div v-else/>
   </div>
-  <div v-else-if="getRoleFromToken() === 'PARTICIPANT'">
-    <ParticipantHistory/>
+  <div v-else>
+    <Unauthorized/>
   </div>
-  <div v-else/>
 </template>
 
 <script>
 import ResearcherHistory from "@/components/ResearcherHistory";
 import ParticipantHistory from "@/components/ParticipantHistory";
+import Unauthorized from "@/components/Unauthorized";
 export default {
   name: "SurveyHistory",
-  components: {ParticipantHistory, ResearcherHistory},
-  methods: {
-    getRoleFromToken() {
-      const tokenDecodablePart = localStorage.getItem("auth-token").split('.')[1]
-      return Buffer.from(tokenDecodablePart, 'base64').toString()
-          .split(',')[1].substr(9)
-          .replace('"', "")
-    }
-  }
+  props: {
+    role: String,
+    loggedIn: Boolean
+  },
+  components: {Unauthorized, ParticipantHistory, ResearcherHistory}
 }
 </script>
 

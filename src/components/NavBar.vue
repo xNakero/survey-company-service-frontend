@@ -1,10 +1,14 @@
 <template>
-  <div></div>
+  <div>{{loggedIn}}</div>
 </template>
 
 <script>
 export default {
-  name: "NavBar"
+  name: "NavBar",
+  props: {
+    loggedIn: Boolean,
+    role: String
+  }
 }
 </script>
 

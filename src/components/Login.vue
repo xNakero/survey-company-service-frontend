@@ -13,7 +13,7 @@
           Login
         </button>
       </div>
-      <a href="/register" style="color: grey">Doesn't have an account? Sign up there</a>
+      <router-link to="/register" style="color: grey">Doesn't have an account? Sign up there</router-link>
     </form>
   </div>
 </template>

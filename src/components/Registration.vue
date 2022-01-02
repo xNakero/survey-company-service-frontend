@@ -1,6 +1,6 @@
 <template>
   <form>
-    <h1>Register</h1>
+    <h1>Sign up</h1>
     <div class="form-control">
       <input type="text" v-model="username" placeholder="" >
     </div>
@@ -16,6 +16,9 @@
     <button @click="onClick()" class="btn">
       Register
     </button>
+    <div>
+      <router-link to="/login" style="color: grey">Already have an account? Sign in there</router-link>
+    </div>
   </form>
 </template>
 
