@@ -1,17 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NavBar/>
+        <Login/>
+    <!--    <Registration/>-->
+    <!--    <ParticipantParams/>-->
+    <!--    <SurveyPublishing/>-->
+    <!--  <ResearcherSurveys/>-->
+    <!--    <SurveysParticipant/>-->
+<!--    <ParticipantHistory/>-->
+<!--    <ResearcherHistory/>-->
+<!--    <SurveyHistory/>-->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Login from "@/components/Login";
+import NavBar from "@/components/NavBar";
+// import Registration from "@/components/Registration";
+// import ParticipantParams from "@/components/ParticipantParams";
+// import SurveyPublishing from "@/components/SurveyPublishing";
+// import ResearcherSurveys from "@/components/ResearcherSurveys";
+// import SurveysParticipant from "@/components/ParticipantSurveys";
 
+// import ParticipantHistory from "@/components/ParticipantHistory";
+
+// import ResearcherHistory from "@/components/ResearcherHistory";
+// import SurveyHistory from "@/components/SurveyHistory";
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NavBar,
+    // SurveyHistory
+    // ResearcherHistory
+    // ParticipantHistory
+    // SurveysParticipant
+    // ResearcherSurveys,
+    // ParticipantParams,
+    // Registration,
+    // SurveyPublishing,
+    Login
   }
 }
 </script>
