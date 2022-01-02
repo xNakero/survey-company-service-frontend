@@ -1,16 +1,15 @@
 <template>
   <div>
-    <NavBar :logged-in="isLoggedIn()" :role="getRoleFromToken()"/>
-    <SurveyPublishing :logged-in="isLoggedIn()" :role="getRoleFromToken()"/>
+    <NavBar :loggedIn="isLoggedIn()" :role="getRoleFromToken()"/>
+    <div>404 not found a path</div>
   </div>
 </template>
 
 <script>
 import NavBar from "@/components/NavBar";
-import SurveyPublishing from "@/components/SurveyPublishing";
 export default {
-  name: "SurveyPublishingView",
-  components: {SurveyPublishing, NavBar},
+  name: "NotFoundView",
+  components: {NavBar},
   methods: {
     getRoleFromToken() {
       if (localStorage.getItem('auth-token') !== null) {

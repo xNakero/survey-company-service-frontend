@@ -5,18 +5,14 @@
         <h2>{{ survey.title }}</h2>
       </div>
       <div>{{ survey.description }}</div>
-      <div>{{ survey.url }}</div>
       <div>
-        <div>Time to complete: {{ survey.timeToComplete }}</div>
-        <div>Started at: {{survey.startedAt }}</div>
-        <div>Finished at: {{survey.finishedAt }}</div>
+        <span>Time to complete: {{ survey.timeToComplete }}</span>
+        <span>Started at: {{survey.startedAt }}</span>
+        <span>Finished at: {{survey.finishedAt }}</span>
       </div>
       <div>
-        <div>CompletionCode: {{ survey.completionCode}}</div>
-        <div>Valid code: {{survey.completedWithValidCode}}</div>
-      </div>
-      <div>
-        <button @click="participate(survey.surveyId)">Participate</button>
+        <span>CompletionCode: {{ survey.completionCode}}</span>
+        <span>Valid code: {{survey.completedWithValidCode}}</span>
       </div>
     </li>
   </ol>
