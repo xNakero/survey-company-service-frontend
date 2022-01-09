@@ -71,7 +71,7 @@
 .main-ui-style {
     background-color: #00C6CF;
     border: #068488 10px solid;
-    border-radius: 50px;
+    border-radius: 10px;
     width: 80%;
     transform: translate(10%);
 }
@@ -124,7 +124,7 @@
     border: none;
 }
 
-.form-button {
+.form-button-green {
     width: 50%;
     display: inline-block;
     background: #324B4C;
@@ -147,4 +147,78 @@
 
 .margin-under-publish {
     margin-bottom: 25px;
+}
+
+.list {
+    list-style-type: none;
+    list-style-position: inside;
+    padding-left: 0;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.list-element {
+    border: none;
+    margin-bottom: 10px;
+    background-color: #068488;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.list-element-title {
+    color: #FFFFFF;
+}
+
+.list-element-one-in-line {
+    font-size: 17px;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+.list-element-multiple-in-line {
+    font-size: 17px;
+    padding: 10px;
+    margin: 10px;
+    color: #FFFFFF;
+}
+
+.list-element-line {
+    margin-bottom: 20px;
+}
+
+.list-button-red {
+    width: 20%;
+    display: inline-block;
+    background: #844647;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: inherit;
+    border: none;
+}
+
+.list-button-green {
+    width: 20%;
+    background: #324B4C;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: inherit;
+    border: none;
+}
+
+.survey-in-progress {
+    padding: 10px;
+    margin-left: 200px;
+    margin-right: 200px;
+    border: none;
+    margin-bottom: 10px;
+    background-color: #068488;
+    border-radius: 5px;
 }

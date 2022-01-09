@@ -24,6 +24,10 @@
           <h3>Ilość miejsc</h3>
           <input type="number" v-model="spots" class="input-box-form-number">
         </div>
+        <div>
+          <h3>Kod potwierdzający ukończenie ankiety</h3>
+          <input type="text" v-model="completionCode" class="input-box-form-text">
+        </div>
       </div>
       <div class="category-line"/>
       <div>
@@ -158,14 +162,14 @@
       </div>
       <div class="category-line"/>
       <div>
-        <button @click="getEligibleParticipantsCount()" class="form-button">
+        <button @click="getEligibleParticipantsCount()" class="form-button-green">
           Sprawdź ilość zakwalifikowanych uczestników
         </button>
         <h3>Ilość zakwalifikowanych uczestników: {{ eligibleParticipants }}</h3>
       </div>
       <div class="category-line"/>
       <div class="margin-under-publish">
-        <button @click="publishSurvey()" class="form-button">Opublikuj</button>
+        <button @click="publishSurvey()" class="form-button-green">Opublikuj</button>
       </div>
     </form>
   </div>
@@ -271,6 +275,7 @@ export default {
     timeToCompleteInMinutes: Number,
     description: String,
     spots: Number,
+    completionCode: String,
     olderOrEqualThan: Number,
     youngerOrEqualThan: Number,
     civilStatus: String,
@@ -326,7 +331,8 @@ export default {
           url: this.url,
           timeToCompleteInSeconds: this.getSeconds(),
           description: this.description,
-          spots: this.spots
+          spots: this.spots,
+          completionCode: this.completionCode
         },
         queryParams: this.getQueryParams()
       }
