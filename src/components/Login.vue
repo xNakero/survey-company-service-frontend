@@ -1,19 +1,19 @@
 <template>
-  <div class="form-window">
+  <div class="login-registration-window">
     <form @submit.prevent>
-      <h1 class="header">Sign in</h1>
-      <div class="form-control">
-        <input type="text" v-model="username" placeholder="login">
+      <h1 class="header">Logowanie</h1>
+      <div class="input-box">
+        <input type="text" v-model="username" placeholder="email">
       </div>
-      <div class="form-control">
-        <input type="password" v-model="password" placeholder="password">
+      <div class="input-box">
+        <input type="password" v-model="password" placeholder="hasło">
       </div>
-      <div class="form-control">
-        <button @click="onClick()" class="btn">
-          Login
+        <button @click="onClick()" class="login-registration-button">
+          Zaloguj się
         </button>
+      <div>
+        <router-link to="/register" style="color: #324B4C">Nie posiadasz konta? Zarejestruj się tutaj</router-link>
       </div>
-      <router-link to="/register" style="color: #324B4C">Doesn't have an account? Sign up there</router-link>
     </form>
   </div>
 </template>
@@ -54,55 +54,5 @@ export default {
 </script>
 
 <style scoped>
-
-.form-control {
-  margin: 20px 0;
-  padding: 5% 5%;
-}
-
-.form-control label {
-  display: block;
-}
-
-.form-control input {
-  width: 70%;
-  height: 40px;
-  margin: 5px;
-  padding: 3px 7px;
-  font-size: 17px;
-  border-radius: 5px;
-  text-align: center;
-  background-color: #FFFFFF;
-}
-
-.form-window {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30%;
-  height: 70%;
-  align-items: center;
-  border-radius: 10px;
-  background-color: #00C6CF;
-}
-
-.btn {
-  width: 50%;
-  display: inline-block;
-  background: #324B4C;
-  color: #00C6CF;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 20px;
-  font-family: inherit;
-}
-
-.header {
-  color: #324B4C;
-  margin-top: 10%;
-}
+@import '../styles/style.css';
 </style>

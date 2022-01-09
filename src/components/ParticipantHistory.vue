@@ -26,7 +26,7 @@ const api = axios.create({
 })
 
 const headers = {
-  headers: {Authorization: `Bearer ${localStorage.getItem('auth-token')}`}
+  headers: {Authorization: `Bearer ${localStorage.getItem("auth-token")}`}
 }
 
 export default {

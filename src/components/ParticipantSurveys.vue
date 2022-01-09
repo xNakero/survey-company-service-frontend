@@ -60,7 +60,7 @@ const api = axios.create({
 })
 
 const headers = {
-  headers: {Authorization: `Bearer ${localStorage.getItem('auth-token')}`}
+  headers: {Authorization: `Bearer ${localStorage.getItem("auth-token")}`}
 }
 
 export default {
@@ -75,6 +75,7 @@ export default {
       api.get("/surveys", headers)
           .then(res => {
             if (res.data.type === 'PARTICIPANT') {
+              console.log(res.data)
               this.surveyInProgress = res.data.surveys.surveyInProgress
               this.availableSurveys = res.data.surveys.availableSurveys
             } else {
