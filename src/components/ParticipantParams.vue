@@ -1,143 +1,149 @@
 <template>
-  <div v-if="role === 'PARTICIPANT' && loggedIn === true">
+  <div v-if="role === 'PARTICIPANT' && loggedIn === true" class="main-ui-style">
     <form @submit.prevent>
       <div>
-        <h2>Basic Information</h2>
+        <h2>Podstawowe informacje</h2>
         <div>
-          <h3>Date of birth</h3>
-          <input type="date" v-model="dateOfBirth">
+          <h3>Data urodzenia</h3>
+          <input type="date" v-model="dateOfBirth" class="input-box-form-date" placeholder="">
         </div>
         <div>
-          <h3>Civil status</h3>
-          <select v-model="civilStatus">
+          <h3>Stan cywilny</h3>
+          <select v-model="civilStatus" class="input-box-form-select">
             <option></option>
             <option>Single</option>
-            <option>Married</option>
-            <option>Divorced</option>
-            <option>Widow</option>
+            <option>Żonaty</option>
+            <option>Rozwiedziony</option>
+            <option>Wdowa</option>
           </select>
         </div>
         <div>
-          <h3>Sex</h3>
-          <select v-model="sex">
+          <h3>Płeć</h3>
+          <select v-model="sex" class="input-box-form-select">
             <option></option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
+            <option>Mężczyzna</option>
+            <option>Kobieta</option>
+            <option>Inna</option>
           </select>
         </div>
       </div>
+      <div class="category-line"/>
       <div>
-        <h2>Demographics</h2>
+        <h2>Dane demograficzne</h2>
         <div>
-          <h3>Country of birth</h3>
-          <select v-model="countryOfBirth">
+          <h3>Kraj urodzenia</h3>
+          <select v-model="countryOfBirth" class="input-box-form-select">
             <option></option>
-            <option>Poland</option>
-            <option>Germany</option>
-            <option>England</option>
+            <option>Polska</option>
+            <option>Niemcy</option>
+            <option>Anglia</option>
           </select>
         </div>
         <div>
-          <h3>Nationality</h3>
-          <select v-model="nationality">
+          <h3>Narodowość</h3>
+          <select v-model="nationality" class="input-box-form-select">
             <option></option>
-            <option>Poland</option>
-            <option>Germany</option>
-            <option>England</option>
+            <option>Polska</option>
+            <option>Niemcy</option>
+            <option>Anglia</option>
           </select>
         </div>
         <div>
-          <h3>Current country</h3>
-          <select v-model="currentCountry">
+          <h3>Obecny kraj pobytu</h3>
+          <select v-model="currentCountry" class="input-box-form-select">
             <option></option>
-            <option>Poland</option>
-            <option>Germany</option>
-            <option>England</option>
+            <option>Polska</option>
+            <option>Niemcy</option>
+            <option>Anglia</option>
           </select>
         </div>
         <div>
-          <h3>First language</h3>
-          <select v-model="firstLanguage">
+          <h3>Język ojczysty</h3>
+          <select v-model="firstLanguage" class="input-box-form-select">
             <option></option>
-            <option>Polish</option>
-            <option>German</option>
-            <option>English</option>
+            <option>Polski</option>
+            <option>Niemiecki</option>
+            <option>Angielski</option>
           </select>
         </div>
       </div>
+      <div class="category-line"/>
       <div>
-        <h2>Education</h2>
+        <h2>Edukacja</h2>
         <div>
-          <h3>Highest education level</h3>
-          <select v-model="highestLevel">
+          <h3>Najwyższy skończony poziom edukacji</h3>
+          <select v-model="highestLevel" class="input-box-form-select">
             <option></option>
-            <option>Primary school</option>
-            <option>High school</option>
-            <option>Undergraduate</option>
-            <option>Graduate</option>
-            <option>Doctorate or higher</option>
+            <option>Wykształcenie podstawowe</option>
+            <option>Wykształcenie średnie</option>
+            <option>Student uczelni wyższej</option>
+            <option>Inżynier/Licencjat/Magister</option>
+            <option>Doktorat lub wyżej</option>
           </select>
         </div>
         <div>
-          <h3>Student status</h3>
-          <select v-model="isStudent">
+          <h3>Status ucznia</h3>
+          <select v-model="isStudent" class="input-box-form-select">
             <option></option>
-            <option>true</option>
-            <option>false</option>
+            <option>Tak</option>
+            <option>Nie</option>
           </select>
         </div>
       </div>
+      <div class="category-line"/>
       <div>
-        <h2>Work</h2>
+        <h2>Informacje o zatrudnieniu</h2>
         <div>
-          <h3>Monthly income in USD</h3>
-          <input type="number" v-model="monthlyIncome">
+          <h3>Miesięczny dochód netto w złotówkach</h3>
+          <input type="number" v-model="monthlyIncome" class="input-box-form-number">
         </div>
         <div>
-          <h3>Employment status</h3>
-          <select v-model="employmentStatus">
+          <h3>Status zatrudnienia</h3>
+          <select v-model="employmentStatus" class="input-box-form-select">
             <option></option>
-            <option>Full time</option>
-            <option>Part time</option>
-            <option>Unemployed</option>
-            <option>Retired</option>
+            <option>Pełen etat</option>
+            <option>Część etatu</option>
+            <option>Bezrobotny</option>
+            <option>Emeryt</option>
           </select>
         </div>
         <div>
-          <h3>Form of employment</h3>
-          <select v-model="formOfEmployment">
+          <h3>Forma zatrudnienia</h3>
+          <select v-model="formOfEmployment" class="input-box-form-select">
             <option></option>
-            <option>Contract of employment</option>
-            <option>Contract of mandate</option>
-            <option>B2B</option>
+            <option>Umowa o pracę</option>
+            <option>Umowa zlecenie</option>
+            <option>Własna działalność gospodarcza</option>
           </select>
         </div>
         <div>
-          <h3>Industry</h3>
-          <select v-model="industry">
+          <h3>Branża</h3>
+          <select v-model="industry" class="input-box-form-select">
             <option></option>
             <option>IT</option>
-            <option>Finance</option>
-            <option>Trade</option>
+            <option>Finanse</option>
+            <option>Handlel</option>
           </select>
         </div>
       </div>
+      <div class="category-line"/>
       <div>
-        <h2>Political views</h2>
+        <h2>Poglądy</h2>
         <div>
-          <h3>Political side</h3>
-          <select v-model="politicalSide">
+          <h3>Poglądy polityczne</h3>
+          <select v-model="politicalSide" class="input-box-form-select">
             <option></option>
-            <option>Left</option>
-            <option>Centre</option>
-            <option>Right</option>
+            <option>Lewica</option>
+            <option>Centralne</option>
+            <option>Prawica</option>
           </select>
         </div>
       </div>
-      <button @click="onClick()" class="btn">
-        Update
+      <div class="category-line"/>
+      <button @click="onClick()" class="form-button">
+        Aktualizuj
       </button>
+      <div class="margin-under-publish"/>
     </form>
   </div>
   <div v-else>
@@ -157,77 +163,150 @@ const headers = {
   headers: {Authorization: `Bearer ${localStorage.getItem("auth-token")}`}
 }
 
-const countries = new Map([
-  ['', [null, '']],
-  ['POLAND', ['POLAND', 'Poland']],
-  ['ENGLAND', ['ENGLAND', 'England']],
-  ['GERMANY', ['GERMANY', 'Germany']]
+const countriesFromResponse = new Map([
+  [null, ''],
+  ['POLAND', 'Polska'],
+  ['ENGLAND', 'Anglia'],
+  ['GERMANY', 'Niemcy']
 ]);
 
-const civilStatuses = new Map([
-  ['', [null, '']],
-  ['SINGLE', ['SINGLE', 'Single']],
-  ['MARRIED', ['MARRIED', 'Married']],
-  ['DIVORCED', ['DIVORCED', 'Divorced']],
-  ['WIDOW', ['WIDOW', 'Widow']]
+const civilStatusesFromResponse = new Map([
+  [null, ''],
+  ['SINGLE', 'Single'],
+  ['MARRIED', 'Żonaty'],
+  ['DIVORCED', 'Rozwiedziony'],
+  ['WIDOW', 'Wdowa']
 ]);
 
-const genders = new Map([
-  ['', [null, '']],
-  ['MALE', ['MALE', 'Male']],
-  ['FEMALE', ['FEMALE', 'Female']],
-  ['OTHER', ['OTHER', 'Other']]
+const gendersFromResponse = new Map([
+  [null, ''],
+  ['MALE', 'Mężczyzna'],
+  ['FEMALE', 'Kobieta'],
+  ['OTHER', 'Inna']
 ]);
 
-const languages = new Map([
-  ['', [null, '']],
-  ['POLISH', ['POLISH', 'Polish']],
-  ['ENGLISH', ['ENGLISH', 'English']],
-  ['GERMAN', ['GERMAN', 'German']]
+const languagesFromResponse = new Map([
+  [null, ''],
+  ['POLISH', 'Polski'],
+  ['ENGLISH', 'Angielski'],
+  ['GERMAN', 'Niemiecki']
 ]);
 
-const educationLevels = new Map([
-  ['', [null, '']],
-  ['PRIMARY_SCHOOL', ['PRIMARY_SCHOOL', 'Primary school']],
-  ['HIGH_SCHOOL', ['HIGH_SCHOOL', 'High school']],
-  ['UNDERGRADUATE', ['UNDERGRADUATE', 'Undergraduate']],
-  ['GRADUATE', ['GRADUATE', 'Graduate']],
-  ['DOCTORATE_OR_HIGHER', ['DOCTORATE_OR_HIGHER', 'Doctorate or higher']]
+const educationLevelsFromResponse = new Map([
+  [null, ''],
+  ['PRIMARY_SCHOOL', 'Wykształcenie podstawowe'],
+  ['HIGH_SCHOOL', 'Wykształcenie średnie'],
+  ['UNDERGRADUATE', 'Student uczelni wyższej'],
+  ['GRADUATE', 'Inżynier/Licencjat/Magister'],
+  ['DOCTORATE_OR_HIGHER', 'Doktorat lub wyżej']
 ]);
 
-const studentStatuses = new Map([
-  ['', [null, '']],
-  ['true', [true, 'Yes']],
-  ['false', [false, 'No']]
+const studentStatusesFromResponse = new Map([
+  [null, ''],
+  [true, 'Tak'],
+  [false, 'Nie']
 ]);
 
-const employmentStatuses = new Map([
-  ['', [null, '']],
-  ['FULL_TIME', ['FULL_TIME', 'Full time']],
-  ['PART_TIME', ['PART_TIME', 'Part time']],
-  ['UNEMPLOYED', ['UNEMPLOYED', 'Unemployed']],
-  ['RETIRED', ['RETIRED', 'Retired']]
+const employmentStatusesFromResponse = new Map([
+  [null, ''],
+  ['FULL_TIME', 'Pełen etat'],
+  ['PART_TIME', 'Część etatu'],
+  ['UNEMPLOYED', 'Bezrobotny'],
+  ['RETIRED', 'Emeryt']
 ]);
 
-const formsOfEmployment = new Map([
-  ['', [null, '']],
-  ['CONTRACT_OF_EMPLOYMENT', ['CONTRACT_OF_EMPLOYMENT', 'Contract of employment']],
-  ['CONTRACT_OF_MANDATE', ['CONTRACT_OF_MANDATE', 'Contract of mandate']],
-  ['BUSINESS_TO_BUSINESS', ['BUSINESS_TO_BUSINESS', 'B2B']]
+const formsOfEmploymentFromResponse = new Map([
+  [null, ''],
+  ['CONTRACT_OF_EMPLOYMENT', 'Umowa o pracę'],
+  ['CONTRACT_OF_MANDATE', 'Umowa zlecenie'],
+  ['BUSINESS_TO_BUSINESS', 'Własna działalność gospodarcza']
 ]);
 
-const industries = new Map([
-  ['', [null, '']],
-  ['IT', ['IT', 'IT']],
-  ['FINANCE', ['FINANCE', 'Finance']],
-  ['TRADE', ['TRADE', 'Trade']]
+const industriesFromResponse = new Map([
+  [null, ''],
+  ['IT', 'IT'],
+  ['FINANCE', 'Finanse'],
+  ['TRADE', 'Handel']
 ])
 
-const politicalSides = new Map([
-  ['', [null, '']],
-  ['LEFT', ['LEFT', 'Left']],
-  ['CENTRE', ['CENTRE', 'Centre']],
-  ['RIGHT', ['RIGHT', 'Right']]
+const politicalSidesFromResponse = new Map([
+  [null, ''],
+  ['LEFT', 'Lewica'],
+  ['CENTRE', 'Centralne'],
+  ['RIGHT', 'Prawica']
+])
+
+const countriesFromForm = new Map([
+  ['', null],
+  ['Polska', 'POLAND'],
+  ['Anglia', 'ENGLAND'],
+  ['Niemcy', 'GERMANY']
+]);
+
+const civilStatusesFromForm = new Map([
+  ['', null],
+  ['Single', 'SINGLE'],
+  ['Żonaty', 'MARRIED'],
+  ['Rozwiedziony', 'DIVORCED'],
+  ['Wdowa', 'WIDOW']
+]);
+
+const gendersFromForm = new Map([
+  ['', null],
+  ['Mężczyzna', 'MALE'],
+  ['Kobieta', 'FEMALE'],
+  ['Inna', 'OTHER']
+]);
+
+const languagesFromForm = new Map([
+  ['', null],
+  ['Polski', 'POLISH'],
+  ['Angielski', 'ENGLISH'],
+  ['Niemiecki', 'GERMAN']
+]);
+
+const educationLevelsFromForm = new Map([
+  ['', null],
+  ['Wykształcenie podstawowe', 'PRIMARY_SCHOOL'],
+  ['Wykształcenie średnie', 'HIGH_SCHOOL'],
+  ['Student uczelni wyższej', 'UNDERGRADUATE'],
+  ['Inżynier/Licencjat/Magister', 'GRADUATE'],
+  ['Doktorat lub wyżej', 'DOCTORATE_OR_HIGHER']
+]);
+
+const studentStatusesFromForm = new Map([
+  ['', null],
+  ['Tak', true],
+  ['Nie', false]
+]);
+
+const employmentStatusesFromForm = new Map([
+  ['', null],
+  ['Pełen etat', 'FULL_TIME'],
+  ['Część etatu', 'PART_TIME'],
+  ['Bezrobotny', 'UNEMPLOYED'],
+  ['Emeryt', 'RETIRED']
+]);
+
+const formsOfEmploymentFromForm = new Map([
+  ['', null],
+  ['Umowa o pracę', 'CONTRACT_OF_EMPLOYMENT'],
+  ['Umowa zlecenie', 'CONTRACT_OF_MANDATE'],
+  ['Własna działalność gospodarcza', 'BUSINESS_TO_BUSINESS']
+]);
+
+const industriesFromForm = new Map([
+  ['', null],
+  ['IT', 'IT'],
+  ['Finanse', 'FINANCE'],
+  ['Handel', 'TRADE']
+])
+
+const politicalSidesFromForm = new Map([
+  ['', null],
+  ['Lewica', 'LEFT'],
+  ['Centralne', 'CENTRE'],
+  ['Prawica', 'RIGHT']
 ])
 
 export default {
@@ -236,7 +315,7 @@ export default {
   props: {
     role: String,
     loggedIn: Boolean,
-    dateOfBirth: Date,
+    dateOfBirth: String,
     civilStatus: String,
     sex: String,
     countryOfBirth: String,
@@ -255,28 +334,28 @@ export default {
     onClick() {
       const body = {
         basicInformation: {
-          dateOfBirth: this.dateOfBirth?.toString ?? null,
-          civilStatus: civilStatuses.get(this.civilStatus.toUpperCase())[0],
-          sex: genders.get(this.sex.toUpperCase())[0]
+          dateOfBirth: this.dateOfBirth ?? null,
+          civilStatus: civilStatusesFromForm.get(this.civilStatus),
+          sex: gendersFromForm.get(this.sex)
         },
         demographics: {
-          countryOfBirth: countries.get(this.countryOfBirth.toUpperCase())[0],
-          nationality: countries.get(this.nationality.toUpperCase())[0],
-          currentCountry: countries.get(this.currentCountry.toUpperCase())[0],
-          firstLanguage: languages.get(this.firstLanguage.toUpperCase())[0]
+          countryOfBirth: countriesFromForm.get(this.countryOfBirth),
+          nationality: countriesFromForm.get(this.nationality),
+          currentCountry: countriesFromForm.get(this.currentCountry),
+          firstLanguage: languagesFromForm.get(this.firstLanguage)
         },
         education: {
-          highestEducationLevelAchieved: educationLevels.get(this.highestLevel.toUpperCase())[0],
-          isStudent: studentStatuses.get(this.isStudent)[0],
+          highestEducationLevelAchieved: educationLevelsFromForm.get(this.highestLevel),
+          isStudent: studentStatusesFromForm.get(this.isStudent),
         },
         work: {
           monthlyIncome: Math.trunc(this.monthlyIncome),
-          employmentStatus: employmentStatuses.get(this.employmentStatus.toUpperCase())[0],
-          formOfEmployment: formsOfEmployment.get(this.formOfEmployment.toUpperCase())[0],
-          industry: industries.get(this.industry.toUpperCase())[0]
+          employmentStatus: employmentStatusesFromForm.get(this.employmentStatus),
+          formOfEmployment: formsOfEmploymentFromForm.get(this.formOfEmployment),
+          industry: industriesFromForm.get(this.industry)
         },
         politicalViews: {
-          politicalSide: politicalSides.get(this.politicalSide.toUpperCase())[0]
+          politicalSide: politicalSidesFromForm.get(this.politicalSide)
         }
       }
       api.put("/personal-profile", body, headers)
@@ -297,21 +376,22 @@ export default {
       api.get("/personal-profile", headers)
           .then(res => {
             console.log(res.data)
+            console.log(educationLevelsFromResponse.get(res.data.education?.highestEducationLevelAchieved ?? ""))
             if (res.status === 200) {
               this.dateOfBirth = res.data.basicInformation.dateOfBirth
-              this.civilStatus = civilStatuses.get(res.data.basicInformation?.civilStatus ?? "")[1]
-              this.sex = genders.get(res.data.basicInformation?.sex ?? "")[1]
-              this.countryOfBirth = countries.get(res.data.demographics?.countryOfBirth ?? "")[1]
-              this.nationality = countries.get(res.data.demographics?.nationality ?? "")[1]
-              this.currentCountry = countries.get(res.data.demographics?.currentCountry ?? "")[1]
-              this.firstLanguage = languages.get(res.data.demographics?.firstLanguage ?? "")[1]
-              this.highestLevel = educationLevels.get(res.data.education?.highestEducationLevelAchieved ?? "")[1]
-              this.isStudent = studentStatuses.get(res.data.education?.isStudent?.toString() ?? "")[1]
+              this.civilStatus = civilStatusesFromResponse.get(res.data.basicInformation?.civilStatus ?? "")
+              this.sex = gendersFromResponse.get(res.data.basicInformation?.sex ?? "")
+              this.countryOfBirth = countriesFromResponse.get(res.data.demographics?.countryOfBirth ?? "")
+              this.nationality = countriesFromResponse.get(res.data.demographics?.nationality ?? "")
+              this.currentCountry = countriesFromResponse.get(res.data.demographics?.currentCountry ?? "")
+              this.firstLanguage = languagesFromResponse.get(res.data.demographics?.firstLanguage ?? "")
+              this.highestLevel = educationLevelsFromResponse.get(res.data.education?.highestEducationLevelAchieved ?? "")
+              this.isStudent = studentStatusesFromResponse.get(res.data.education?.isStudent ?? "")
               this.monthlyIncome = res.data.work.monthlyIncome
-              this.employmentStatus = employmentStatuses.get(res.data.work?.employmentStatus ?? "")[1]
-              this.formOfEmployment = formsOfEmployment.get(res.data.work?.formOfEmployment ?? "")[1]
-              this.industry = industries.get(res.data.work?.industry ?? "")[1]
-              this.politicalSide = politicalSides.get(res.data.politicalViews?.politicalSide ?? "")[1]
+              this.employmentStatus = employmentStatusesFromResponse.get(res.data.work?.employmentStatus ?? "")
+              this.formOfEmployment = formsOfEmploymentFromResponse.get(res.data.work?.formOfEmployment ?? "")
+              this.industry = industriesFromResponse.get(res.data.work?.industry ?? "")
+              this.politicalSide = politicalSidesFromResponse.get(res.data.politicalViews?.politicalSide ?? "")
             }
           })
     }
@@ -320,5 +400,5 @@ export default {
 </script>
 
 <style scoped>
-
+@import '../styles/style.css';
 </style>

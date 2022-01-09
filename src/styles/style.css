@@ -1,0 +1,150 @@
+.input-box {
+    margin: 20px 0;
+    padding: 5% 5%;
+}
+
+.input-box input {
+    width: 70%;
+    height: 40px;
+    margin: 5px;
+    padding: 3px 7px;
+    font-size: 17px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #FFFFFF;
+    border: none;
+}
+
+.login-registration-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 70%;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #00C6CF;
+}
+
+.login-registration-button {
+    width: 50%;
+    display: inline-block;
+    background: #324B4C;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    margin-bottom: 3%;
+    margin-top: 5%;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: inherit;
+    border: none;
+}
+
+.header {
+    color: #324B4C;
+    margin-top: 10%;
+}
+
+.select-box {
+    width: 66%;
+    height: 40px;
+    font-size: 17px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 5%;
+    border: none;
+}
+
+.select-box:focus-within {
+    text-align: center;
+}
+
+.informational-text {
+    font-size: 16px;
+    padding-bottom: 10px;
+    color: #324B4C;
+}
+
+.main-ui-style {
+    background-color: #00C6CF;
+    border: #068488 10px solid;
+    border-radius: 50px;
+    width: 80%;
+    transform: translate(10%);
+}
+
+.input-box-form-text {
+    width: 50%;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+}
+
+.input-box-form-number {
+    appearance: none;
+    width: 50%;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+}
+
+.input-box-form-textarea {
+    width: 50%;
+    height: 200px;
+    resize: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    font-size: 17px;
+}
+
+.input-box-form-select {
+    width: 50%;
+    height: 40px;
+    font-size: 17px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+}
+
+.input-box-form-date {
+    font-size: 17px;
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+}
+
+.form-button {
+    width: 50%;
+    display: inline-block;
+    background: #324B4C;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: inherit;
+    border: none;
+}
+
+.category-line {
+    width: 90%;
+    border-top: 2px solid #068488;
+    margin: 30px;
+    transform: translate(3%);
+}
+
+.margin-under-publish {
+    margin-bottom: 25px;
+}

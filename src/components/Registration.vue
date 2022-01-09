@@ -1,25 +1,28 @@
 <template>
-  <form>
-    <h1>Sign up</h1>
-    <div class="form-control">
-      <input type="text" v-model="username" placeholder="" >
-    </div>
-    <div class="form-control">
-      <input type="password" v-model="password" placeholder="">
-    </div>
-    <div class="form-control">
-      <select v-model="role">
-        <option>Participant</option>
-        <option>Researcher</option>
-      </select>
-    </div>
-    <button @click="onClick()" class="btn">
-      Register
-    </button>
-    <div>
-      <router-link to="/login" style="color: grey">Already have an account? Sign in there</router-link>
-    </div>
-  </form>
+  <div class="login-registration-window">
+    <form>
+      <h1 class="header">Rejestracja</h1>
+      <div class="input-box">
+        <input type="text" v-model="username" placeholder="email" >
+      </div>
+      <div class="input-box">
+        <input type="password" v-model="password" placeholder="hasło">
+      </div>
+      <div>
+        <div class="informational-text">Wybierz jakiego typu konto chcesz stworzyć</div>
+        <select v-model="role" class="select-box">
+          <option>Ankietowany</option>
+          <option>Ankieter</option>
+        </select>
+      </div>
+      <button @click="onClick()" class="login-registration-button">
+        Zarejestruj się
+      </button>
+      <div>
+        <router-link to="/login" style="color: #324B4C">Posiadasz konto? Zaloguj się tutaj</router-link>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -28,6 +31,11 @@ import axios from "axios";
 const api = axios.create({
   baseURL: 'http://localhost:8081'
 })
+
+const roleMappings = new Map([
+    ['Ankietowany', 'PARTICIPANT'],
+    ['Ankieter', 'RESEARCHER']
+])
 
 export default {
   name: "Registration",
@@ -41,7 +49,7 @@ export default {
       const body = {
         username: this.username,
         password: this.password,
-        role: this.role.toUpperCase()
+        role: roleMappings.get(this.role)
       };
       console.log(body)
       api.post("/register", body)
@@ -59,5 +67,5 @@ export default {
 </script>
 
 <style scoped>
-
+@import '../styles/style.css';
 </style>
