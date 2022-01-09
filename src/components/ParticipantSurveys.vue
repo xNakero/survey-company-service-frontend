@@ -1,50 +1,44 @@
 <template>
-  <div>
+  <div class="main-ui-style">
+    <h1>Ankieta w trakcie</h1>
     <div v-if="surveyInProgress !== null">
-      <div>
-        <h1>Survey in progress</h1>
-      </div>
-      <div>
+      <div class="survey-in-progress">
+        <h2 class="list-element-title">{{ surveyInProgress.title }}</h2>
+        <div class="list-element-one-in-line">{{ surveyInProgress.description }}</div>
+        <div class="list-element-one-in-line">{{ surveyInProgress.url }}</div>
+        <div class="list-element-one-in-line">Rozpoczęto: {{ surveyInProgress.startedAt }}</div>
+        <div class="list-element-one-in-line">Trzeba skończyć przed: {{ surveyInProgress.hasToFinishUntil }}</div>
         <div>
-          <h2>{{ surveyInProgress.title }}</h2>
+          <input class="input-box-form-text" type="text" v-model="completionCodeActiveSurvey" placeholder="">
         </div>
-        <div>{{ surveyInProgress.description }}</div>
-        <div>{{ surveyInProgress.url }}</div>
-        <div>
-          <div>Started at: {{ surveyInProgress.startedAt }}</div>
-          <div>Has to finish until: {{ surveyInProgress.hasToFinishUntil }}</div>
-        </div>
-        <div>
-          <input type="text" v-model="completionCodeActiveSurvey" placeholder="">
-        </div>
-        <div>
-          <div>
-            <button @click="completeSurvey">Submit</button>
-          </div>
-          <div>
-            <button @click="cancelParticipation">Cancel</button>
-          </div>
+        <div style="margin: 20px;"/>
+        <div class="list-element-line">
+          <span class="list-element-multiple-in-line">
+            <button class="list-button-green" @click="completeSurvey">Zatwierdź</button>
+          </span>
+          <span class="list-element-multiple-in-line">
+            <button class="list-button-red" @click="cancelParticipation">Anuluj</button>
+          </span>
         </div>
       </div>
     </div>
     <div v-else></div>
+    <div class="category-line"/>
     <div>
       <div>
-        <h1>Available surveys</h1>
+        <h1>Dostępne ankiety</h1>
       </div>
-      <ol>
-        <li v-for="survey in availableSurveys" v-bind:key="survey.surveyId">
+      <ol class="list">
+        <li class="list-element" v-for="survey in availableSurveys" v-bind:key="survey.surveyId">
           <div>
-            <h2>{{ survey.title }}</h2>
+            <h2 class="list-element-title">{{ survey.title }}</h2>
           </div>
-          <div>{{ survey.description }}</div>
-          <div>{{ survey.url }}</div>
+          <div class="list-element-one-in-line">{{ survey.description }}</div>
+          <div class="list-element-one-in-line">{{ survey.url }}</div>
+          <div class="list-element-one-in-line">Wolne miejsca: {{ survey.freeSpots }}</div>
+          <div class="list-element-one-in-line">Czas do końca: {{ survey.timeToComplete }}</div>
           <div>
-            <span>Free spots: {{ survey.freeSpots }}</span>
-            <span>Time to complete: {{ survey.timeToComplete }}</span>
-          </div>
-          <div>
-            <button @click="participate(survey.surveyId)">Participate</button>
+            <button class="list-button-green" @click="participate(survey.surveyId)">Zarezerwuj miejsce</button>
           </div>
         </li>
       </ol>
@@ -95,7 +89,7 @@ export default {
     completeSurvey() {
       const body = {
         action: 'COMPLETE',
-        completionCode: null
+        completionCode: this.completionCodeActiveSurvey
       }
       const endpoint = "/surveys/" + this.surveyInProgress.surveyId + "/participations/" + this.surveyInProgress.participationId
       api.put(endpoint, body, headers)
@@ -104,6 +98,7 @@ export default {
               this.surveyInProgress = null
             }
           })
+      .catch(res => {console.log(res)})
     },
     cancelParticipation() {
       const body = {

@@ -1,21 +1,24 @@
 <template>
-  <ol>
-    <li v-for="survey in surveys" v-bind:key="survey.surveyId">
-      <div>
-        <h2>{{ survey.title }}</h2>
-      </div>
-      <div>{{ survey.description }}</div>
-      <div>
-        <span>Time to complete: {{ survey.timeToComplete }}</span>
-        <span>Started at: {{survey.startedAt }}</span>
-        <span>Finished at: {{survey.finishedAt }}</span>
-      </div>
-      <div>
-        <span>CompletionCode: {{ survey.completionCode}}</span>
-        <span>Valid code: {{survey.completedWithValidCode}}</span>
-      </div>
-    </li>
-  </ol>
+  <div class="main-ui-style">
+    <ol class="list">
+      <li class="list-element" v-for="survey in surveys" v-bind:key="survey.surveyId">
+        <div>
+          <h2 class="list-element-title">{{ survey.title }}</h2>
+        </div>
+        <div class="list-element-one-in-line">{{ survey.description }}</div>
+        <div class="list-element-one-in-line">Czas na skończenie ankiety: {{ survey.timeToComplete }}</div>
+        <div class="list-element-one-in-line">Rozpoczęto udział: {{ survey.startedAt }}</div>
+        <div class="list-element-one-in-line">Zakończono udział: {{ survey.finishedAt }}</div>
+        <div v-if="survey.completionCode != null">
+          <div class="list-element-one-in-line">Kod potwierdzający ukończenie ankiety: {{ survey.completionCode }}</div>
+          <div class="list-element-one-in-line">Kod był poprawny</div>
+        </div>
+        <div class="list-element-one-in-line" v-else>
+          Nie podano kodu
+        </div>
+      </li>
+    </ol>
+  </div>
 </template>
 
 <script>
@@ -28,6 +31,7 @@ const api = axios.create({
 const headers = {
   headers: {Authorization: `Bearer ${localStorage.getItem("auth-token")}`}
 }
+
 
 export default {
   name: "ParticipantHistory",

@@ -4,19 +4,19 @@
       <div>
         <div class="navbar">
               <span class="navbar-element">
-                <router-link class="primary-button" to="/surveys">Surveys</router-link>
+                <router-link class="primary-button" to="/surveys">Ankiety</router-link>
               </span>
           <span class="navbar-element">
-                <router-link class="primary-button" to="/history">History</router-link>
+                <router-link class="primary-button" to="/history">Historia</router-link>
               </span>
           <span class="navbar-element" v-if="role === 'RESEARCHER'">
-                <router-link class="primary-button" to="/add-survey">Publish</router-link>
+                <router-link class="primary-button" to="/add-survey">Opublikuj ankietę</router-link>
               </span>
           <span class="navbar-element" v-else>
-                <router-link class="primary-button" to="/profile">Profile</router-link>
+                <router-link class="primary-button" to="/profile">Profil</router-link>
               </span>
           <span class="navbar-element">
-                <router-link class="primary-button" @click.native="logout()" to="/">Logout</router-link>
+                <router-link class="primary-button" @click.native="logout()" to="/">Wyloguj się</router-link>
               </span>
         </div>
       </div>
@@ -27,13 +27,13 @@
       <div>
         <div class="navbar">
           <span class="navbar-element">
-            <router-link class="primary-button" to="/">Home</router-link>
+            <router-link class="primary-button" to="/">Strona domowa</router-link>
           </span>
           <span class="navbar-element">
-            <router-link class="primary-button" to="/login">Login</router-link>
+            <router-link class="primary-button" to="/login">Logowanie</router-link>
           </span>
           <span class="navbar-element">
-            <router-link class="primary-button" to="/register">Register</router-link>
+            <router-link class="primary-button" to="/register">Rejestracja</router-link>
           </span>
         </div>
       </div>

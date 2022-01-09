@@ -140,7 +140,7 @@
         </div>
       </div>
       <div class="category-line"/>
-      <button @click="onClick()" class="form-button">
+      <button @click="onClick()" class="form-button-green">
         Aktualizuj
       </button>
       <div class="margin-under-publish"/>

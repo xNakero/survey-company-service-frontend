@@ -1,25 +1,26 @@
 <template>
-  <ol>
-    <li v-for="survey in surveys" v-bind:key="survey.surveyId">
-      <div>
-        <h2>{{ survey.title }}</h2>
-      </div>
-      <div>{{ survey.description }}</div>
-      <div>{{ survey.url }}</div>
-      <div>
-        <span>Spots total: {{ survey.spotsTotal }}</span>
-        <span>Spots taken: {{ survey.spotsTaken }}</span>
-        <span>Started at: {{ survey.startedAt }}</span>
-      </div>
-      <div>
-        <span>Completion code: {{ survey.completionCode }}</span>
-        <span>Time to complete: {{ survey.timeToComplete }}</span>
-      </div>
-      <div>
-        <button @click="finishSurvey()">Finish prematurely</button>
-      </div>
-    </li>
-  </ol>
+  <div class="main-ui-style">
+    <h1>Aktywne ankiety</h1>
+    <ol class="list">
+      <li class="list-element" v-for="survey in surveys" v-bind:key="survey.surveyId">
+        <div>
+          <h2 class="list-element-title">{{ survey.title }}</h2>
+        </div>
+        <div class="list-element-one-in-line">{{ survey.description }}</div>
+        <div class="list-element-one-in-line">{{ survey.url }}</div>
+        <div class="list-element">
+          <span class="list-element-multiple-in-line">Łączna ilość miejsc: {{ survey.spotsTotal }}</span>
+          <span class="list-element-multiple-in-line">Miejsca zajęte: {{ survey.spotsTaken }}</span>
+        </div>
+        <div class="list-element-one-in-line">Rozpoczęto: {{ survey.startedAt }}</div>
+        <div class="list-element-one-in-line">Kod potwierdzający wykonanie ankiety: {{ survey.completionCode }}</div>
+        <div class="list-element-one-in-line">Czas na ukończenie ankiety: {{ survey.timeToComplete }}</div>
+        <div>
+          <button class="list-button-red" @click="finishSurvey(survey.surveyId)">Zakończ wcześniej</button>
+        </div>
+      </li>
+    </ol>
+  </div>
 </template>
 
 <script>
@@ -50,6 +51,7 @@ export default {
           })
     },
     finishSurvey(surveyId) {
+      console.log(surveyId)
       const body = {action: "FINISH"}
       api.put("/surveys/" + surveyId, body, headers)
       .then(res => {
