@@ -15,6 +15,9 @@
         <span>Completion code: {{ survey.completionCode }}</span>
         <span>Time to complete: {{ survey.timeToComplete }}</span>
       </div>
+      <div>
+        <button @click="finishSurvey()">Finish prematurely</button>
+      </div>
     </li>
   </ol>
 </template>
@@ -45,6 +48,17 @@ export default {
               console.log("didn't fetch researcher surveys.")
             }
           })
+    },
+    finishSurvey(surveyId) {
+      const body = {action: "FINISH"}
+      api.put("/surveys/" + surveyId, body, headers)
+      .then(res => {
+        if (res.status === 200) {
+          console.log("scheduled")
+        } else {
+          console.log("finishing survey failed.")
+        }
+      })
     }
   },
   mounted() {

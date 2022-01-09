@@ -154,7 +154,7 @@ const api = axios.create({
 })
 
 const headers = {
-  headers: {Authorization: `Bearer ${localStorage.getItem('auth-token')}`}
+  headers: {Authorization: `Bearer ${localStorage.getItem("auth-token")}`}
 }
 
 const countries = new Map([
@@ -292,6 +292,7 @@ export default {
     }
   },
   mounted: function () {
+    console.log(headers)
     if (this.role === 'PARTICIPANT' && this.loggedIn) {
       api.get("/personal-profile", headers)
           .then(res => {
