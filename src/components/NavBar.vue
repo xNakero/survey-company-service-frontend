@@ -27,9 +27,6 @@
       <div>
         <div class="navbar">
           <span class="navbar-element">
-            <router-link class="primary-button" to="/">Strona domowa</router-link>
-          </span>
-          <span class="navbar-element">
             <router-link class="primary-button" to="/login">Logowanie</router-link>
           </span>
           <span class="navbar-element">
@@ -52,6 +49,7 @@ export default {
     logout() {
       localStorage.clear()
       this.$forceUpdate()
+      this.$router.push('/login')
     }
   }
 }

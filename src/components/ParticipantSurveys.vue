@@ -73,7 +73,7 @@ export default {
               this.surveyInProgress = res.data.surveys.surveyInProgress
               this.availableSurveys = res.data.surveys.availableSurveys
             } else {
-              console.log("didn't fetch researcher surveys.")
+              console.log("didn't fetch participant surveys.")
             }
           })
     },
