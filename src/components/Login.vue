@@ -1,5 +1,6 @@
 <template>
-  <div class="login-registration-window">
+  <div v-if="routeIfLoggedIn()"/>
+  <div v-else class="login-registration-window">
     <form @submit.prevent>
       <h1 class="header">Logowanie</h1>
       <div class="input-box">
@@ -43,11 +44,30 @@ export default {
             console.log(res.status)
             if (res.status === 200) {
               localStorage.setItem("auth-token", res.data.authorizationToken)
+              this.$router.push('/surveys')
               console.log(res.data)
             } else {
               console.log("Error")
             }
           })
+    },
+    isLoggedIn() {
+      if (localStorage.getItem('auth-token') !== null) {
+        const claims = localStorage.getItem("auth-token").split('.')[1]
+        return new Date(
+            Buffer.from(claims, 'base64')
+                .toString()
+                .split(',')[3]
+                .substr(6) * 1e3)
+            .getTime() >= Date.now()
+      }
+    },
+    routeIfLoggedIn() {
+      if (this.isLoggedIn()) {
+        this.$router.push('/surveys')
+        return true
+      }
+      return false
     }
   }
 }
